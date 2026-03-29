@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Main {
 
     /*
@@ -7,6 +9,13 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: When on Run, have a window pop up
+    // TODO: Make the window bigger and make sure when you exit the window it exits the code
 
+    public static void main(final String[] args) {
+        final JFrame window = new JFrame();
+
+        window.setVisible(true);
+        window.pack();
+
+    }
 }
