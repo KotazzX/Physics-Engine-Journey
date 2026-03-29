@@ -9,13 +9,19 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: Make the window bigger and make sure when you exit the window it exits the code
+    // TODO: Make a ball show up on the screen or any shape.
+
+    static String title = "Physics Simulation";
+    static int width = 1920;
+    static int height = 1080;
+
 
     public static void main(final String[] args) {
+
         final JFrame window = new JFrame();
-
         window.setVisible(true);
-        window.pack();
-
+        window.setTitle(title);
+        window.setSize(width, height);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
