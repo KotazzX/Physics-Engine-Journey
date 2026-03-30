@@ -9,7 +9,10 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: Make a ball show up on the screen or any shape.
+    // TODO: Make the ball drop or something gravity wise!
+
+    static final JFrame window = new JFrame();
+
 
     static String title = "Physics Simulation";
     static int width = 1920;
@@ -18,10 +21,14 @@ public class Main {
 
     public static void main(final String[] args) {
 
-        final JFrame window = new JFrame();
-        window.setVisible(true);
+
+        // Setting the title and size; when closing the window, exit code
         window.setTitle(title);
         window.setSize(width, height);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        window.add(new DrawCircles());
+        window.setVisible(true);
+
     }
 }
