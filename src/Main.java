@@ -11,6 +11,10 @@ public class Main {
 
     // TODO: Make the ball drop or something gravity wise!
 
+    // For the balls to have gravity, might have to update every frame?
+    // While knowing its position, the velocity, and direction?
+
+
     static final JFrame window = new JFrame();
 
 
