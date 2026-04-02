@@ -11,9 +11,6 @@ public class Main {
 
     // TODO: Make the ball drop or something gravity wise!
 
-    // For the balls to have gravity, might have to update every frame?
-    // While knowing its position, the velocity, and direction?
-
 
     static Ball ball = new Ball();
     static final JFrame window = new JFrame();
@@ -32,10 +29,12 @@ public class Main {
         window.setSize(width, height);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        window.add(new DrawCircles(ball));
-        ball.update();
-        window.repaint();
-        window.setVisible(true);
 
+        while (true) {
+            window.add(new DrawCircles(ball));
+            ball.update();
+            window.repaint();
+            window.setVisible(true);
+        }
     }
 }
