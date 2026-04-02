@@ -15,6 +15,7 @@ public class Main {
     // While knowing its position, the velocity, and direction?
 
 
+    static Ball ball = new Ball();
     static final JFrame window = new JFrame();
 
 
@@ -31,7 +32,9 @@ public class Main {
         window.setSize(width, height);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        window.add(new DrawCircles());
+        window.add(new DrawCircles(ball));
+        ball.update();
+        window.repaint();
         window.setVisible(true);
 
     }
