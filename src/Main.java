@@ -1,5 +1,7 @@
 import javax.swing.*;
 
+import static time.Time.deltaTime;
+
 public class Main {
 
     /*
@@ -13,12 +15,15 @@ public class Main {
 
 
     static Ball ball = new Ball();
+    static DrawCircles circles = new DrawCircles(ball);
     static final JFrame window = new JFrame();
 
 
     static String title = "Physics Simulation";
     static int width = 1920;
     static int height = 1080;
+
+    static long lastTime = System.nanoTime();
 
 
     public static void main(final String[] args) {
@@ -27,14 +32,26 @@ public class Main {
         // Setting the title and size; when closing the window, exit code
         window.setTitle(title);
         window.setSize(width, height);
+        window.add(circles);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setVisible(true);
 
 
         while (true) {
-            window.add(new DrawCircles(ball));
-            ball.update();
-            window.repaint();
-            window.setVisible(true);
+            long currentTime = System.nanoTime();
+
+            ball.update(deltaTime(lastTime, currentTime));
+            circles.repaint();
+
+            lastTime = currentTime;
+
+            // Have the program "sleep" to get about 60 frames or something
+            try {
+                Thread.sleep(16);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }
