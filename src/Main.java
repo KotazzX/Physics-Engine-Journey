@@ -11,11 +11,11 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: Make the ball drop or something gravity wise!
+    // TODO: Make the ball detect the new rectangle border!
 
 
     static Ball ball = new Ball();
-    static DrawCircles circles = new DrawCircles(ball);
+    static Renderer render = new Renderer(ball);
     static final JFrame window = new JFrame();
 
 
@@ -28,12 +28,13 @@ public class Main {
 
     public static void main(final String[] args) {
 
-
         // Setting the title and size; when closing the window, exit code
         window.setTitle(title);
         window.setSize(width, height);
-        window.add(circles);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.add(render);
+
+
         window.setVisible(true);
 
 
@@ -41,7 +42,7 @@ public class Main {
             long currentTime = System.nanoTime();
 
             ball.update(deltaTime(lastTime, currentTime));
-            circles.repaint();
+            render.repaint();
 
             lastTime = currentTime;
 

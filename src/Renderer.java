@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class DrawCircles extends JPanel {
+public class Renderer extends JPanel {
+    Border border = new Border();
+
     Ball myBall;
 
-    public DrawCircles(Ball ball) {
+    public Renderer(Ball ball) {
         this.myBall = ball;
         this.setDoubleBuffered(true);
         this.setOpaque(true);
@@ -16,8 +18,12 @@ public class DrawCircles extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        // Rendering objects on the window
         g.setColor(Color.red);
         g.fillOval((int)myBall.posX ,(int)myBall.posY, 200, 200);
+
+        g.setColor(Color.green);
+        g.fillRect(border.posX, border.posY, border.width, border.height);
 
         Toolkit.getDefaultToolkit().sync();
     }
