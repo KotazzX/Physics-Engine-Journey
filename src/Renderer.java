@@ -19,7 +19,7 @@ public class Renderer extends JPanel {
         super.paintComponent(g);
 
         // Rendering objects on the window
-        g.setColor(Color.red);
+        g.setColor(myBall.ballColor);
         g.fillOval((int)myBall.posX ,(int)myBall.posY, 200, 200);
 
         g.setColor(Color.green);

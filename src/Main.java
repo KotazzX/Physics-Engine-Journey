@@ -44,6 +44,8 @@ public class Main {
             ball.update(deltaTime(lastTime, currentTime));
             render.repaint();
 
+            CollisionCheck.Collision();
+
             lastTime = currentTime;
 
             // Have the program "sleep" to get about 60 frames or something
