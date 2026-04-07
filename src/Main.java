@@ -14,7 +14,7 @@ public class Main {
     // TODO: Make the ball detect the new rectangle border!
 
 
-    static Ball ball = new Ball(9.8, 40.0, 0, 100.0, 100.0);
+    static Ball ball = new Ball(400.0, 40.0, 0, 100.0, 100.0);
     static Renderer render = new Renderer(ball);
     static final JFrame window = new JFrame();
 
