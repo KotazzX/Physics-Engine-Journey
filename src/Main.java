@@ -14,7 +14,7 @@ public class Main {
     // TODO: Make the ball detect the new rectangle border!
 
 
-    static Ball ball = new Ball();
+    static Ball ball = new Ball(9.8, 40.0, 0, 100.0, 100.0);
     static Renderer render = new Renderer(ball);
     static final JFrame window = new JFrame();
 
@@ -44,7 +44,7 @@ public class Main {
             ball.update(deltaTime(lastTime, currentTime));
             render.repaint();
 
-            CollisionCheck.Collision();
+            CollisionCheck.check(ball, render.border);
 
             lastTime = currentTime;
 
