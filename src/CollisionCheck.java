@@ -10,7 +10,8 @@ public class CollisionCheck{
             System.out.println("Boom, ball has hit the border" + ball.posY);
             ball.ballColor = newColor();
 
-            ball.gravity -= 400.0;
+            ball.velY -= 100.0;
+
         }
     }
 
