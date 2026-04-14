@@ -1,14 +1,24 @@
+import java.awt.*;
+
 public class Ball {
+
+    // TODO: Have posX and posY not hard coded for it to remember, add a constructor
 
     // Ball movement and logic goes in here
 
-    double gravity = 400;
+    Color ballColor = Color.red;
 
-    double posX = 100.0;
-    double posY = 100.0;
+    double gravity;
+    double velX, velY;
+    double posX, posY;
 
-    double velX = 40.0;
-    double velY = 0;
+     public Ball(double gravity, double velX, double velY, double posX, double posY) {
+        this.gravity = gravity;
+        this.velX = velX;
+        this.velY = velY;
+        this.posX = posX;
+        this.posY = posY;
+    }
 
     public void update(double deltaTime) {
         // Position of the ball and how fast the ball will move in set position
