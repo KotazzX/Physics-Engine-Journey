@@ -11,7 +11,6 @@ public class CollisionCheck{
             ball.ballColor = newColor();
 
             ball.velY -= 100.0;
-
         }
     }
 

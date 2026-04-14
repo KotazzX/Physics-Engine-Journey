@@ -10,7 +10,7 @@ I am slight beginner, and using this to get more insight on game dev! might be m
 
 * [x] Create a stable window (JFrame)
 * [x] Get a ball to appear on the screen
-* [ ] Impliment gravity
+* [x] Implement gravity
 * [ ] Get 2 balls to collide
 * [ ] Try out giving different balls different bounciness
-* [ ] Possible Raycasting project (Long-term Goal)
+* [ ] Possible Ray-casting project (Long-term Goal)
