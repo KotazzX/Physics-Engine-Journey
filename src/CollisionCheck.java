@@ -6,11 +6,11 @@ public class CollisionCheck{
 
     public static void check(Ball ball, Border border) {
 
-        if (ball.posY > border.posY) {
+        if (ball.posY + 200 > border.posY) {
             System.out.println("Boom, ball has hit the border" + ball.posY);
             ball.ballColor = newColor();
 
-            ball.velY -= 100.0;
+            ball.velY *= -0.8;
         }
     }
 
