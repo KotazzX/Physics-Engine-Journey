@@ -11,13 +11,14 @@ public class Ball {
     double gravity;
     double velX, velY;
     double posX, posY;
+    double size;
 
-     public Ball(double gravity, double velX, double velY, double posX, double posY) {
+     public Ball(double gravity, double velX, double velY, double size) {
         this.gravity = gravity;
         this.velX = velX;
         this.velY = velY;
-        this.posX = posX;
-        this.posY = posY;
+        this.size = size;
+        this.size = ballSize();
     }
 
     public void update(double deltaTime) {
@@ -27,5 +28,9 @@ public class Ball {
 
         posX += velX * deltaTime;
         posY += velY * deltaTime;
+    }
+
+    public double ballSize(){
+         return size = posY + posX;
     }
 }

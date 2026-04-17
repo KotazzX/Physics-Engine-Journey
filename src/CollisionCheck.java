@@ -2,21 +2,24 @@ import java.awt.*;
 
 public class CollisionCheck{
 
-    // if the border touches the wall, let it move negative
-
     public static void check(Ball ball, Border border) {
 
-        if (ball.posY + 200 > border.posY) {
-            System.out.println("Boom, ball has hit the border" + ball.posY);
+        // Ball passes border with offset. Change color of ball and bounce it in the opposite direction.
+        if (ball.ballSize() > border.posY) {
             ball.ballColor = newColor();
 
             ball.velY *= -0.8;
+
+            System.out.println("new ball vel: " + ball.velY  + "\n ball y pos: " + ball.posY);
+
+            if (ball.velY == 0) {
+                ball.gravity = 0;
+            }
         }
     }
 
     private static Color newColor() {
-        // New colors for when ball goes below the border
-
+        // New color for ball
         int r = 11;
         int g = 41;
         int b = 200;

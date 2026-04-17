@@ -11,10 +11,10 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: Make the ball detect the new rectangle border!
+    // TODO: Add a wall Border for the ball to bounce off of & make a ball size for the ball
 
 
-    static Ball ball = new Ball(400.0, 40.0, 0, 100.0, 100.0);
+    static Ball ball = new Ball(400.0, 40.0, 0, 100.0);
     static Renderer render = new Renderer(ball);
     static final JFrame window = new JFrame();
 
