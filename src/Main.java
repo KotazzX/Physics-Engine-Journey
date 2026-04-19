@@ -11,10 +11,10 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: Add a wall Border for the ball to bounce off of & make a ball size for the ball
+    // TODO: Add a wall Border for the ball to bounce off of
 
 
-    static Ball ball = new Ball(400.0, 40.0, 0, 100.0);
+    static Ball ball = new Ball(400.0, 40.0, 0, 150, 200, 200);
     static Renderer render = new Renderer(ball);
     static final JFrame window = new JFrame();
 
