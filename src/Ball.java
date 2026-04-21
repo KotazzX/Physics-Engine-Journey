@@ -9,6 +9,7 @@ public class Ball {
     double velX, velY;
     double posX, posY;
     int size;
+    int radius;
 
      public Ball(double gravity, double velX, double velY, double posX, double posY, int size) {
         this.gravity = gravity;
@@ -17,6 +18,7 @@ public class Ball {
         this.posX = posX;
         this.posY = posY;
         this.size = size;
+        this.radius = size / 2;
     }
 
     public void update(double deltaTime) {

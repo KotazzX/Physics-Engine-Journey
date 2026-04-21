@@ -22,6 +22,9 @@ public class Renderer extends JPanel {
         g.setColor(myBall.ballColor);
         g.fillOval((int)myBall.posX ,(int)myBall.posY, myBall.size, myBall.size);
 
+        g.setColor(Color.black);
+        g.fillOval((int)myBall.posX - myBall.radius,(int)myBall.posY - myBall.radius, 50, 50);
+
         g.setColor(Color.green);
         g.fillRect(border.posX, border.posY, border.width, border.height);
 

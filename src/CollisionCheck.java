@@ -9,6 +9,9 @@ public class CollisionCheck{
 
          Might be slightly hard to do but you can do it! if you need to search something up go ahead
          (and also do pseudocode also, it helps!)
+
+
+         radius of the ball = size / 2 (possibly) can probably add another circle in the main circle to show it better.
          */
 
         // Ball passes border with offset. Change color of ball and bounce it in the opposite direction.
