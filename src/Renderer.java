@@ -22,8 +22,9 @@ public class Renderer extends JPanel {
         g.setColor(myBall.ballColor);
         g.fillOval((int)myBall.posX ,(int)myBall.posY, myBall.size, myBall.size);
 
+        // positions are in the middle of the ball but the paint isn't
         g.setColor(Color.black);
-        g.fillOval((int)myBall.posX - myBall.radius,(int)myBall.posY - myBall.radius, 50, 50);
+        g.fillOval((int)myBall.posX + myBall.radius,(int)myBall.posY + myBall.radius, 5, 5);
 
         g.setColor(Color.green);
         g.fillRect(border.posX, border.posY, border.width, border.height);

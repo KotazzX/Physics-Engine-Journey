@@ -14,6 +14,9 @@ public class CollisionCheck{
          radius of the ball = size / 2 (possibly) can probably add another circle in the main circle to show it better.
          */
 
+        double newBallPosX = ball.posX - ball.radius;
+        double newBallPosY = ball.posY - ball.radius;
+
         // Ball passes border with offset. Change color of ball and bounce it in the opposite direction.
         if (ball.posY > border.posY) {
             ball.ballColor = newColor();
@@ -21,6 +24,7 @@ public class CollisionCheck{
             ball.velY *= -0.8;
 
             System.out.println("HIT: new ball vel: " + ball.velY  + "\n ball y pos: " + ball.posY);
+            System.out.println("New ball x pos:" + newBallPosX + "\n New ball y pos:" + newBallPosY);
 
             if (ball.velY == 0) {
                 ball.gravity = 0;
