@@ -9,26 +9,21 @@ public class CollisionCheck{
 
          Might be slightly hard to do but you can do it! if you need to search something up go ahead
          (and also do pseudocode also, it helps!)
-
-
-         radius of the ball = size / 2 (possibly) can probably add another circle in the main circle to show it better.
          */
 
-        double newBallPosX = ball.posX - ball.radius;
-        double newBallPosY = ball.posY - ball.radius;
+        System.out.println("\nBall Bottom: " + (ball.posY + ball.radius));
+        System.out.println("Floor Top: " + border.posY);
+        System.out.println("The Gap: " + (border.posY - (ball.posY + ball.radius)));
 
-        // Ball passes border with offset. Change color of ball and bounce it in the opposite direction.
-        if (ball.posY > border.posY) {
-            ball.ballColor = newColor();
+        // Center point of ball hits rectangle. Change color of ball and bounce it in the opposite direction.
+        if (ball.posY + ball.radius > border.posY) {
+            System.out.println("LOGGER -> Ball hit border, posY: " + (ball.posY + ball.radius) + "\n");
 
             ball.velY *= -0.8;
+            ball.ballColor = newColor();
 
-            System.out.println("HIT: new ball vel: " + ball.velY  + "\n ball y pos: " + ball.posY);
-            System.out.println("New ball x pos:" + newBallPosX + "\n New ball y pos:" + newBallPosY);
-
-            if (ball.velY == 0) {
-                ball.gravity = 0;
-            }
+            // Snaps back a bit so that it doesn't stay stuck in floor
+            ball.posY = border.posY - ball.radius;
         }
     }
 
@@ -40,5 +35,4 @@ public class CollisionCheck{
 
         return new Color(r, g, b);
     }
-
 }

@@ -4,10 +4,10 @@ import java.awt.*;
 public class Renderer extends JPanel {
     Border border = new Border();
 
-    Ball myBall;
+    Ball ball;
 
     public Renderer(Ball ball) {
-        this.myBall = ball;
+        this.ball = ball;
         this.setDoubleBuffered(true);
         this.setOpaque(true);
     }
@@ -18,13 +18,19 @@ public class Renderer extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        // NOTE: I draw with (posX - radius) because fillOval starts at the corner,
+        // but my physics treats (posX) as the center
+
         // Rendering objects on the window
-        g.setColor(myBall.ballColor);
-        g.fillOval((int)myBall.posX ,(int)myBall.posY, myBall.size, myBall.size);
+        g.setColor(ball.ballColor);
+        int drawX = (int) ball.posX - ball.radius;
+        int drawY = (int) ball.posY - ball.radius;
+
+        g.fillOval(drawX, drawY, ball.size, ball.size);
 
         // Second ball position in the middle of main ball
         g.setColor(Color.black);
-        g.fillOval((int)myBall.posX + myBall.radius,(int)myBall.posY + myBall.radius, 5, 5);
+        g.fillOval((int) ball.posX, (int) ball.posY, 5, 5);
 
         g.setColor(Color.green);
         g.fillRect(border.posX, border.posY, border.width, border.height);
