@@ -32,8 +32,13 @@ public class Renderer extends JPanel {
         g.setColor(Color.black);
         g.fillOval((int) ball.posX, (int) ball.posY, 5, 5);
 
+
+        // Bottom border
         g.setColor(Color.green);
         g.fillRect(border.posX, border.posY, border.width, border.height);
+
+        g.setColor(Color.GREEN);
+        g.fillRect(border.sidePosX, border.sidePosY, border.sideWidth, border.sideHeight);
 
         Toolkit.getDefaultToolkit().sync();
     }

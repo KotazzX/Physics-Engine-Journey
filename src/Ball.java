@@ -11,6 +11,7 @@ public class Ball {
     int size;
     int radius;
 
+    // Ball remember its position and velocity.
      public Ball(double gravity, double velX, double velY, double posX, double posY, int size) {
         this.gravity = gravity;
         this.velX = velX;
@@ -23,7 +24,6 @@ public class Ball {
 
     public void update(double deltaTime) {
         // Position of the ball and how fast the ball will move in set position
-
         velY += gravity * deltaTime;
 
         posX += velX * deltaTime;

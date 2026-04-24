@@ -11,10 +11,10 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: Add a wall Border for the ball to bounce off of
+    // TODO: Add another ball
 
 
-    static Ball ball = new Ball(400.0, 40.0, 0, 150, 200, 200);
+    static Ball ball = new Ball(400.0, 60.0, 10.0, 150, 200, 200);
     static Renderer render = new Renderer(ball);
     static final JFrame window = new JFrame();
 
@@ -48,7 +48,7 @@ public class Main {
 
             lastTime = currentTime;
 
-            // Have the program "sleep" to get about 60 frames or something
+            // Have the program "sleep" to get about 60 frames
             try {
                 Thread.sleep(16);
             } catch (InterruptedException e) {
