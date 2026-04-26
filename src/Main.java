@@ -14,7 +14,7 @@ public class Main {
     // TODO: Add another ball
 
 
-    static Ball ball = new Ball(400.0, 60.0, 10.0, 150, 200, 200);
+    static Ball ball = new Ball(400.0, 320, 10.0, 150, 200, 200);
     static Renderer render = new Renderer(ball);
     static final JFrame window = new JFrame();
 

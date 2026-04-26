@@ -10,8 +10,13 @@ public class Border {
 
 
     // Right side of border.
-    int sidePosX = 720;
-    int sidePosY = 0;
-    int sideWidth = 50;
-    int sideHeight = 1080;
+    int sideRPosX = 720;
+    int sideRPosY = 0;
+    int sideRWidth = 50;
+    int sideRHeight = 1080;
+
+    int sideTPosX = -720;
+    int sideTPosY = 0;
+    int sideTWidth = 1080;
+    int sideTHeight = 50;
 }

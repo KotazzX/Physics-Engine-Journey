@@ -6,19 +6,29 @@ public class CollisionCheck{
 
         // Bottom of ball hits the top of the y pos and bounces in opposite direction.
         if (ball.posY + ball.radius > border.posY) {
-            ball.velY *= -0.8;
+            ball.velY *= -1.5;
             ball.ballColor = newColor();
 
             // Snaps back a bit so that it doesn't stay stuck in floor.
             ball.posY = border.posY - ball.radius;
         }
 
+        // Bottom of ball hits the top of the y pos and bounces in opposite direction.
+        if (ball.posY - ball.radius < border.sideTPosY) {
+            ball.velY *= -1.5;
+            ball.ballColor = newColor();
+
+            // Snaps back a bit so that it doesn't stay stuck in floor.
+            ball.posY = border.sideTPosY + ball.radius;
+        }
+
+
         // Side of ball hits the side of the x pos and bounces in opposite direction.
-        if (ball.posX + ball.radius > border.sidePosX) {
-            ball.velX *= -0.8;
+        if (ball.posX + ball.radius > border.sideRPosX) {
+            ball.velX *= -1.5;
 
             // Snaps back a little so that it doesn't stick to wall.
-            ball.posX = border.sidePosX - ball.radius;
+            ball.posX = border.sideRPosX - ball.radius;
         }
     }
 
