@@ -4,31 +4,37 @@ public class CollisionCheck{
 
     public static void check(Ball ball, Border border) {
 
-        // Bottom of ball hits the top of the y pos and bounces in opposite direction.
-        if (ball.posY + ball.radius > border.posY) {
-            ball.velY *= -1.5;
+        System.out.println("\nLOGGER -> Bottom of Rectangle: " + (border.topPosY + border.topHeight));
+        System.out.println("LOGGER -> Top of Circle: " + (ball.posY - ball.radius));
+
+        double bounceVel = -0.8;
+        int bottomRectCollision = border.topPosY + border.topHeight;
+
+        // Bottom border collision
+        if (ball.posY + ball.radius > border.bottomPosY) {
+            ball.velY *= bounceVel;
             ball.ballColor = newColor();
 
             // Snaps back a bit so that it doesn't stay stuck in floor.
-            ball.posY = border.posY - ball.radius;
+            ball.posY = border.bottomPosY - ball.radius;
         }
 
-        // Bottom of ball hits the top of the y pos and bounces in opposite direction.
-        if (ball.posY - ball.radius < border.sideTPosY) {
-            ball.velY *= -1.5;
+        // Top border collision
+        if (ball.posY - ball.radius < bottomRectCollision) {
+            ball.velY *= bounceVel;
             ball.ballColor = newColor();
 
             // Snaps back a bit so that it doesn't stay stuck in floor.
-            ball.posY = border.sideTPosY + ball.radius;
+            ball.posY = bottomRectCollision + ball.radius;
         }
 
 
         // Side of ball hits the side of the x pos and bounces in opposite direction.
-        if (ball.posX + ball.radius > border.sideRPosX) {
-            ball.velX *= -1.5;
+        if (ball.posX + ball.radius > border.rightPosX) {
+            ball.velX *= bounceVel;
 
             // Snaps back a little so that it doesn't stick to wall.
-            ball.posX = border.sideRPosX - ball.radius;
+            ball.posX = border.rightPosX - ball.radius;
         }
     }
 

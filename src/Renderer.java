@@ -35,13 +35,13 @@ public class Renderer extends JPanel {
 
         // Bottom border
         g.setColor(Color.green);
-        g.fillRect(border.posX, border.posY, border.width, border.height);
+        g.fillRect(border.bottomPosX, border.bottomPosY, border.bottomWidth, border.bottomHeight);
 
         g.setColor(Color.GREEN);
-        g.fillRect(border.sideRPosX, border.sideRPosY, border.sideRWidth, border.sideRHeight);
+        g.fillRect(border.rightPosX, border.rightPosY, border.rightWidth, border.rightHeight);
 
         g.setColor(Color.GREEN);
-        g.fillRect(border.sideTPosX, border.sideTPosY, border.sideTWidth, border.sideTHeight);
+        g.fillRect(border.topPosX, border.topPosY, border.topWidth, border.topHeight);
 
         Toolkit.getDefaultToolkit().sync();
     }
