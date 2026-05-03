@@ -1,6 +1,6 @@
 # Physics Engine Journey
 
-A Physics Engine I've been meaning to make for a long long time! Finally diving in to see what I can create from scratch.
+A Physics Engine I've been meaning to make for a really long time! Finally diving in to see what I can create from scratch.
 
 
 ### The Vision

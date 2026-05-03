@@ -4,9 +4,6 @@ public class CollisionCheck{
 
     public static void check(Ball ball, Border border) {
 
-        System.out.println("\nLOGGER -> Bottom of Rectangle: " + (border.topPosY + border.topHeight));
-        System.out.println("LOGGER -> Top of Circle: " + (ball.posY - ball.radius));
-
         double bounceVel = -0.8;
         int bottomRectCollision = border.topPosY + border.topHeight;
 
