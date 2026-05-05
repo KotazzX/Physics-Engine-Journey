@@ -40,12 +40,9 @@ public class Main {
         window.setVisible(true);
 
 
-        // This feels right, should "render" in the balls also!
-        ballList.add(new Ball(400.0, 320, 10.0, 150, 100, 200));
-        ballList.add(new Ball(400.0, 300, 10.0, 200, 192, 200));
-        ballList.add(new Ball(400.0, 153, 10.0, 250, 150, 200));
-        ballList.add(new Ball(400.0, 50, 10.0, 100, 60, 200));
-
+        // Add in more balls into the simulation
+        ballList.add(new Ball(400.0, 320, 10.0, 25, 100, 200));
+        ballList.add(new Ball(400.0, 300, 10.0, 500, 250, 200));
 
 
 
@@ -56,7 +53,7 @@ public class Main {
                 b.update(deltaTime(lastTime, currentTime));
                 render.repaint();
 
-                CollisionCheck.check(b, render.border);
+                CollisionCheck.check(b, render.border, ballList);
             }
 
             lastTime = currentTime;

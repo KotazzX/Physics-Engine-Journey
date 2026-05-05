@@ -52,6 +52,9 @@ public class Renderer extends JPanel {
         g.setColor(Color.GREEN);
         g.fillRect(border.topPosX, border.topPosY, border.topWidth, border.topHeight);
 
+        g.setColor(Color.GREEN);
+        g.fillRect(border.leftPosX, border.leftPosY, border.leftWidth, border.leftHeight);
+
         Toolkit.getDefaultToolkit().sync();
     }
 }
