@@ -1,5 +1,7 @@
 import javax.swing.*;
 
+import java.util.ArrayList;
+
 import static time.Time.deltaTime;
 
 public class Main {
@@ -11,11 +13,11 @@ public class Main {
     This is for you and you only, it's a learning process and you'll get much better!
      */
 
-    // TODO: Add another ball
+    // TODO: Add another ball that can also collide (and possibly change size)
 
+    static ArrayList<Ball> ballList = new ArrayList<>();
 
-    static Ball ball = new Ball(400.0, 320, 10.0, 150, 200, 200);
-    static Renderer render = new Renderer(ball);
+    static Renderer render = new Renderer(ballList);
     static final JFrame window = new JFrame();
 
 
@@ -26,6 +28,7 @@ public class Main {
     static long lastTime = System.nanoTime();
 
 
+
     public static void main(final String[] args) {
 
         // Setting the title and size; when closing the window, exit code
@@ -34,17 +37,24 @@ public class Main {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.add(render);
 
-
         window.setVisible(true);
+
+
+        // Add in more balls into the simulation
+        ballList.add(new Ball(400.0, 320, 10.0, 25, 100, 200));
+        ballList.add(new Ball(400.0, 300, 10.0, 500, 250, 200));
+
 
 
         while (true) {
             long currentTime = System.nanoTime();
 
-            ball.update(deltaTime(lastTime, currentTime));
-            render.repaint();
+            for (Ball b : ballList) {
+                b.update(deltaTime(lastTime, currentTime));
+                render.repaint();
 
-            CollisionCheck.check(ball, render.border);
+                CollisionCheck.check(b, render.border, ballList);
+            }
 
             lastTime = currentTime;
 
